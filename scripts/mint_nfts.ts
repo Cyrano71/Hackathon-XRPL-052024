@@ -19,7 +19,15 @@ const mintToken = async () => {
       "URI": convertStringToHex("https://drive.google.com/file/d/1dTibJaUiWa5IiatFDh0Y_u7jJLc3N0eH/view?usp=drive_link"),
       "Flags": 8,
       "TransferFee": 25000,
-      "NFTokenTaxon": 0 //Required, but if you have no use for it, set to zero.
+      "NFTokenTaxon": 0, //Required, but if you have no use for it, set to zero.
+      "Memos": [
+        {
+            "Memo": {
+                "MemoType": convertStringToHex("Metadata"),
+                "MemoData": convertStringToHex(JSON.stringify({"name": "attestation-de-propriété-D2098.png"})),
+            }
+        }
+    ]
     };
 
     // ----------------------------------------------------- Submit signed blob 
@@ -31,7 +39,7 @@ const mintToken = async () => {
     const nfts = await client.request(request)
 
     // ------------------------------------------------------- Report results
-    results += '\n\nTransaction result: '+ tx.result!.meta!
+    console.log("Transaction result:", tx.result)
     results += '\n\nnfts: ' + JSON.stringify(nfts, null, 2)
     console.log(results);
     const balance = (await client.getXrpBalance(standby_wallet.address))
