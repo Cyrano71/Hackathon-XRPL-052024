@@ -2,8 +2,8 @@ import {  Client,  Wallet, Payment, xrpToDrops, convertStringToHex }  from "xrpl
 
 const client = new Client("wss://s.altnet.rippletest.net:51233")
 
-const issuerSeed = 'sEdVH8bUeEnsx5SDC1VAqm7YCJ5QiLi'
-const receiverSeed = 'sEdTLkGGQLbow2ydptZRjYvqS3c5Pxe'
+const issuerSeed = process.env.XRP_TEST_WALLET_SEED as string;
+const receiverSeed = process.env.XRP_TEST_WALLET_SEED2 as string; ''
 
 /*
 1F7FFC85C39390B0B4A71D03B53DFA7D90E5B8902106C09E0D6BA85AF852EFE1

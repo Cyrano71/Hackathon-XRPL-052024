@@ -1,8 +1,9 @@
 import {  Client,  Wallet, Request, convertStringToHex, NFTokenMint  }  from "xrpl" 
+import "dotenv/config"
 
 const client = new Client("wss://s.altnet.rippletest.net:51233")
 
-const issuerSeed = 'sEdTLkGGQLbow2ydptZRjYvqS3c5Pxe'
+const issuerSeed = process.env.XRP_TEST_WALLET_SEED as string;
 
 const mintToken = async () => {
     let results = "";
