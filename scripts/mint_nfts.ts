@@ -17,6 +17,33 @@ const mintToken = async () => {
       "url" : "https://drive.google.com/file/d/1dTibJaUiWa5IiatFDh0Y_u7jJLc3N0eH/view?usp=drive_link", 
       "name": "attestation-de-propriété-D2098.png"
     });
+    const URI = "https://maps.app.goo.gl/sPTHyPDh6sHT9jCD8"
+    const memoData = {
+      floor: 2,
+      appartmentId : 3,
+      txIds: [
+        "1F7FFC85C39390B0B4A71D03B53DFA7D90E5B8902106C09E0D6BA85AF852EFE1",
+        "4E7BFC6CBD824DCFCE7D51C643F9E51CC0898309387286631D89B1F3C616F3E8",
+        "655294C0191028D6F6F149FE5B0E73FE277481CC38EC107B4266028F9D79F27C",
+  ]}
+
+  const transactionJson: NFTokenMint = {
+    "TransactionType": "NFTokenMint",
+    "Account": standby_wallet.classicAddress,
+    "URI": convertStringToHex(URI),
+    "Flags": 8,
+    "TransferFee": 25000,
+    "NFTokenTaxon": 0, //Required, but if you have no use for it, set to zero.
+    "Memos": [
+      {
+          "Memo": {
+              "MemoType": convertStringToHex("Metadata"),
+              "MemoData": convertStringToHex(JSON.stringify(memoData)),
+          }
+      }
+  ]
+  };
+  /*
     const transactionJson: NFTokenMint = {
       "TransactionType": "NFTokenMint",
       "Account": standby_wallet.classicAddress,
@@ -33,6 +60,7 @@ const mintToken = async () => {
         }
     ]
     };
+    */
 
     // ----------------------------------------------------- Submit signed blob 
     const tx = await client.submitAndWait(transactionJson, { wallet: standby_wallet} )

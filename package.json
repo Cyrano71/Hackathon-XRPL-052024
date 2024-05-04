@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "payment": "tsc && node dist/payment.js",
     "account_nfts": "tsc && node dist/account_nfts.js",
+    "create_test_wallet": "tsc && node dist/create_test_wallet.js",
     "mint_nfts": "tsc && node dist/mint_nfts.js"
   },
   "author": "",
