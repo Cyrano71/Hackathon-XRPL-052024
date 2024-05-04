@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "account_nfts": "hardhat run --network evmSidechain scripts/account_nfts.ts",
-    "mint_nfts":  "hardhat run --network evmSidechain scripts/mint_nfts.ts",
+    "account_nfts": "hardhat run scripts/account_nfts.ts",
+    "mint_nfts":  "hardhat run scripts/mint_nfts.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
