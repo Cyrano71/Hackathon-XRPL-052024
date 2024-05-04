@@ -5,22 +5,30 @@ const client = new Client("wss://s.altnet.rippletest.net:51233")
 
 const issuerSeed = process.env.XRP_TEST_WALLET_SEED as string;
 
+/*
+https://maps.app.goo.gl/rcPVzxCS5JQShxkT6
+15 Rue de Vaugirard, 75006 Paris
+
+https://maps.app.goo.gl/T6KKfWjnsyaGA9Jn7
+81 Rue de Grenelle, 75007 Paris
+*/
+
 const mintToken = async () => {
     let results = "";
     const standby_wallet = Wallet.fromSeed(issuerSeed)
     await client.connect()
     results += '\nConnected. Minting NFT.'
 
-    const URI = "https://maps.app.goo.gl/rcPVzxCS5JQShxkT6"
+    const URI = "https://maps.app.goo.gl/T6KKfWjnsyaGA9Jn7"
     const memoData = {
-      name: "15 Rue de Vaugirard, 75006 Paris",
-      collectionName: "75006",
-      floor: 1,
-      appartmentId : 7,
+      name: "81 Rue de Grenelle, 75007 Paris",
+      collectionName: "75007",
+      floor: 2,
+      appartmentId : 3,
       txIds: [
-        "1E5FCA9DE685FBD30F24B4403A487F045DB1A7B7DFA105EB153D8CC337F0DA09",
-        "20CCE2D19D631C647C66E8B6FDF2BF51EBCBC1081757B8688459695DF43B7FE7",
-        "63E558768FD8969226EFFA86C65B94E05D0025A8D628D29A80115583543C9556",
+        "6881BB021632F37416B582E4B282AD51E3371C7F3C0C05241FA211AE2EC231FF",
+        "EE43EFD562CD53366921163124B5B215308302D82F545B51331161614A311B85",
+        "670A6F88B46804AC9C6ADEB92DD9DD631359A0BD99DCE4538A6B746629007581",
   ]}
 
   const transactionJson: NFTokenMint = {
