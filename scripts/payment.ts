@@ -1,5 +1,4 @@
 import {  Client,  Wallet, Payment, xrpToDrops, convertStringToHex }  from "xrpl" 
-import crypto from "crypto";
 
 const client = new Client("wss://s.altnet.rippletest.net:51233")
 
@@ -18,9 +17,7 @@ const payment = async () => {
 
     const issuer_wallet = Wallet.fromSeed(issuerSeed);
     const receiver_wallet = Wallet.fromSeed(receiverSeed);
-    const reason = "content of pdf bill payment"
-    var hash = crypto.createHash('sha256').update(reason).digest('hex');
-    console.log("Hash Document", hash)
+    const hash = "086b27b8ec8e727651d078134333b6c976fce0b9adb37e54e416873ea3bca9f8"
     const tx:Payment  = {
             TransactionType: "Payment",
             Account: issuer_wallet.classicAddress,

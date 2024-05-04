@@ -12,13 +12,22 @@ https://xrpl.org/docs/references/protocol/transactions/types/nftokenmint/
 
 ### Commands
 
-1. Create payments txns
+1. Get the content bill doc hash 
 
-- hash the content of the bill doc
-- put the hash in the InvoiceID
-- run the command npm run payment
+```console
+npm run hash_doc
+```
 
-2. Mint the NFT
+2. Create payments txns
+
+- put the hash doc in the InvoiceID
+- run the command 
+
+```console
+npm run payment
+```
+
+3. Mint the NFT
 
 - include in the memo data the list of txns
 - run the command npm run mint_nfts
@@ -53,6 +62,6 @@ Transaction result: {
 }
 ```
 
-3. Get the NFT memo data with the NFT token id
+4. Get the NFT memo data with the NFT token id
 
 npm run get_memo
