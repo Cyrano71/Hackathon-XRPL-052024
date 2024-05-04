@@ -1,9 +1,10 @@
 import {  Client,  Wallet, Payment, xrpToDrops, convertStringToHex }  from "xrpl" 
+import "dotenv/config"
 
 const client = new Client("wss://s.altnet.rippletest.net:51233")
 
 const issuerSeed = process.env.XRP_TEST_WALLET_SEED as string;
-const receiverSeed = process.env.XRP_TEST_WALLET_SEED2 as string; ''
+const receiverSeed = process.env.XRP_TEST_WALLET_SEED2 as string;
 
 /*
 1F7FFC85C39390B0B4A71D03B53DFA7D90E5B8902106C09E0D6BA85AF852EFE1
@@ -13,26 +14,31 @@ const receiverSeed = process.env.XRP_TEST_WALLET_SEED2 as string; ''
 
 const payment = async () => {
     console.log("lets get started...");
-    await client.connect();
+    await client.connect()
 
     const issuer_wallet = Wallet.fromSeed(issuerSeed);
     const receiver_wallet = Wallet.fromSeed(receiverSeed);
-    const hash = "086b27b8ec8e727651d078134333b6c976fce0b9adb37e54e416873ea3bca9f8"
-    const tx:Payment  = {
+    const hashes = [ "563514872a995625dea10fbafa81fa11bced83181e74939513f6b70543fd6b2c",
+    "4250cca56b7a4929545a23117c2f85a71bd83d289b5a01cb36fc515b90b3ab6e",
+    "270e3ad4be0311452c39e9e9cf21550d8799e022df1494d7de56e80637cc6ce7",];
+    
+    for (let i = 0; i < hashes.length; i++) {
+        const hash = hashes[i];
+        const tx:Payment  = {
             TransactionType: "Payment",
             Account: issuer_wallet.classicAddress,
             Destination: receiver_wallet.classicAddress,
             Amount: xrpToDrops("1"),
             InvoiceID: hash
             };
-    const result = await client.submitAndWait(tx, {
-                         autofill: true,
-                         wallet: issuer_wallet,
-                 }); 
-                
-    //console.log(result)
-    console.log("InvoiceID: ", result.result.InvoiceID)
-    console.log("Hash Transaction", result.result.hash)
+        const txnReponse = await client.submitAndWait(tx, {
+                            autofill: true,
+                            wallet: issuer_wallet,
+                    });
+        //console.log(txnReponse)
+        //console.log("InvoiceID: ", txnReponse.result.InvoiceID)
+        console.log("Hash Transaction", txnReponse.result.hash)
+    }
 
     await client.disconnect();
     console.log("all done!");

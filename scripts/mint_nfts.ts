@@ -11,14 +11,16 @@ const mintToken = async () => {
     await client.connect()
     results += '\nConnected. Minting NFT.'
 
-    const URI = "https://maps.app.goo.gl/sPTHyPDh6sHT9jCD8"
+    const URI = "https://maps.app.goo.gl/rcPVzxCS5JQShxkT6"
     const memoData = {
-      floor: 2,
-      appartmentId : 3,
+      name: "15 Rue de Vaugirard, 75006 Paris",
+      collectionName: "75006",
+      floor: 1,
+      appartmentId : 7,
       txIds: [
-        "1F7FFC85C39390B0B4A71D03B53DFA7D90E5B8902106C09E0D6BA85AF852EFE1",
-        "4E7BFC6CBD824DCFCE7D51C643F9E51CC0898309387286631D89B1F3C616F3E8",
-        "655294C0191028D6F6F149FE5B0E73FE277481CC38EC107B4266028F9D79F27C",
+        "1E5FCA9DE685FBD30F24B4403A487F045DB1A7B7DFA105EB153D8CC337F0DA09",
+        "20CCE2D19D631C647C66E8B6FDF2BF51EBCBC1081757B8688459695DF43B7FE7",
+        "63E558768FD8969226EFFA86C65B94E05D0025A8D628D29A80115583543C9556",
   ]}
 
   const transactionJson: NFTokenMint = {

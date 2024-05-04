@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "hash_doc": "tsc && node dist/hash_pdf_content.js",
+    "hash_pdf_content": "tsc && node dist/hash_pdf_content.js",
     "get_memo": "tsc && node dist/get_memo.js",
     "payment": "tsc && node dist/payment.js",
     "account_nfts": "tsc && node dist/account_nfts.js",
