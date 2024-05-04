@@ -8,7 +8,7 @@ const getMemo = async () => {
     results += '\nConnected. Getting NFTs...'
     const request: Request = {
         command: "nft_history",
-        nft_id: "000861A8D783EBF762A2BC5020388F906975809BCFBCFB4041CD30060003CB6B"
+        nft_id: "000861A83021CE83D3E15325146E1FBE1F6EADDB34D946D6A97A2F8A000606EF"
       };   
     const result: NFTHistoryResponse = await client.request(request)
     console.log(convertHexToString(result.result.transactions[0].tx!.Memos![0]!.Memo.MemoData!))

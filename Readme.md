@@ -30,7 +30,10 @@ npm run payment
 3. Mint the NFT
 
 - include in the memo data the list of txns
-- run the command npm run mint_nfts
+- run the command 
+```console
+npm run mint_nfts
+```
 - in the txn result get the nftoken_id in meta
 
 ```
@@ -64,4 +67,6 @@ Transaction result: {
 
 4. Get the NFT memo data with the NFT token id
 
+```console
 npm run get_memo
+```
