@@ -18,9 +18,9 @@ const payment = async () => {
 
     const issuer_wallet = Wallet.fromSeed(issuerSeed);
     const receiver_wallet = Wallet.fromSeed(receiverSeed);
-    const hashes = [ "563514872a995625dea10fbafa81fa11bced83181e74939513f6b70543fd6b2c",
-    "4250cca56b7a4929545a23117c2f85a71bd83d289b5a01cb36fc515b90b3ab6e",
-    "270e3ad4be0311452c39e9e9cf21550d8799e022df1494d7de56e80637cc6ce7",];
+    const hashes = [ "cf71ebf9953dfa1295e03834a66750393c09cfa84bc3f30f7320ba75d63c9ce7",
+    "d0cabf2cc18f9b7a1e323825b720e20f440b530ca5ae232366d407e89ecd2e03",
+    "dba3c97a50671f1ab5464d7c54d66faff01457894a8e85a3ac62fad12d71c29c"];
     
     for (let i = 0; i < hashes.length; i++) {
         const hash = hashes[i];
@@ -37,7 +37,8 @@ const payment = async () => {
                     });
         //console.log(txnReponse)
         //console.log("InvoiceID: ", txnReponse.result.InvoiceID)
-        console.log("Hash Transaction", txnReponse.result.hash)
+        const result = "\"" + txnReponse.result.hash +  "\","
+        console.log(result)
     }
 
     await client.disconnect();
