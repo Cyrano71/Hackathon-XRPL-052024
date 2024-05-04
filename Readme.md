@@ -1,4 +1,4 @@
-# XRPL Training
+# XRPL Hackathon
 
 ## First Day
 
