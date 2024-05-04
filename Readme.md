@@ -14,14 +14,15 @@ https://xrpl.org/docs/references/protocol/transactions/types/nftokenmint/
 
 1. Create payments txns
 
-a) hash the content of the bill doc
-b) put the hash in the InvoiceID
-c) run the command npm run payment
+- hash the content of the bill doc
+- put the hash in the InvoiceID
+- run the command npm run payment
 
 2. Mint the NFT
-a) include in the memo data the list of txns
-b) run the command npm run mint_nfts
-c) in the txn result get the nftoken_id in meta
+
+- include in the memo data the list of txns
+- run the command npm run mint_nfts
+- in the txn result get the nftoken_id in meta
 
 ```
 Transaction result: {
