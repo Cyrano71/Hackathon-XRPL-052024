@@ -13,10 +13,14 @@ const mintToken = async () => {
     // Note that you must convert the token URL to a hexadecimal 
     // value for this transaction.
     // ------------------------------------------------------------------------
+    const data = JSON.stringify({
+      "url" : "https://drive.google.com/file/d/1dTibJaUiWa5IiatFDh0Y_u7jJLc3N0eH/view?usp=drive_link", 
+      "name": "attestation-de-propriété-D2098.png"
+    });
     const transactionJson: NFTokenMint = {
       "TransactionType": "NFTokenMint",
       "Account": standby_wallet.classicAddress,
-      "URI": convertStringToHex("https://drive.google.com/file/d/1dTibJaUiWa5IiatFDh0Y_u7jJLc3N0eH/view?usp=drive_link"),
+      "URI": convertStringToHex(data),
       "Flags": 8,
       "TransferFee": 25000,
       "NFTokenTaxon": 0, //Required, but if you have no use for it, set to zero.

@@ -16,8 +16,11 @@ const getNFT = async () => {
       };
     const nfts = await client.request(request)
     results += '\nNFTs:\n ' + JSON.stringify(nfts,null,2)
-    console.log(results);
-    console.log("URI : ", convertHexToString(nfts.result.account_nfts[0].URI!));
+    //console.log(results);
+    type NFTData = {name: string, url: string};
+    const data: NFTData = JSON.parse(convertHexToString(nfts.result.account_nfts[0].URI!))
+    console.log("url : ", data.url);
+    console.log("name : ", data.name);
     client.disconnect()
 }
 
