@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "get_memo": "tsc && node dist/get_memo.js",
     "payment": "tsc && node dist/payment.js",
     "account_nfts": "tsc && node dist/account_nfts.js",
     "create_test_wallet": "tsc && node dist/create_test_wallet.js",

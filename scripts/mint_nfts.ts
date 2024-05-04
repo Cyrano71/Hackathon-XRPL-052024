@@ -9,14 +9,7 @@ const mintToken = async () => {
     const standby_wallet = Wallet.fromSeed(issuerSeed)
     await client.connect()
     results += '\nConnected. Minting NFT.'
-        
-    // Note that you must convert the token URL to a hexadecimal 
-    // value for this transaction.
-    // ------------------------------------------------------------------------
-    const data = JSON.stringify({
-      "url" : "https://drive.google.com/file/d/1dTibJaUiWa5IiatFDh0Y_u7jJLc3N0eH/view?usp=drive_link", 
-      "name": "attestation-de-propriété-D2098.png"
-    });
+
     const URI = "https://maps.app.goo.gl/sPTHyPDh6sHT9jCD8"
     const memoData = {
       floor: 2,
@@ -43,24 +36,6 @@ const mintToken = async () => {
       }
   ]
   };
-  /*
-    const transactionJson: NFTokenMint = {
-      "TransactionType": "NFTokenMint",
-      "Account": standby_wallet.classicAddress,
-      "URI": convertStringToHex(data),
-      "Flags": 8,
-      "TransferFee": 25000,
-      "NFTokenTaxon": 0, //Required, but if you have no use for it, set to zero.
-      "Memos": [
-        {
-            "Memo": {
-                "MemoType": convertStringToHex("Metadata"),
-                "MemoData": convertStringToHex(JSON.stringify({"name": "attestation-de-propriété-D2098.png"})),
-            }
-        }
-    ]
-    };
-    */
 
     // ----------------------------------------------------- Submit signed blob 
     const tx = await client.submitAndWait(transactionJson, { wallet: standby_wallet} )
@@ -78,5 +53,33 @@ const mintToken = async () => {
     console.log("balance : ", balance);
     client.disconnect()
 }
+
+/*
+          
+    // Note that you must convert the token URL to a hexadecimal 
+    // value for this transaction.
+    // ------------------------------------------------------------------------
+    const data = JSON.stringify({
+      "url" : "https://drive.google.com/file/d/1dTibJaUiWa5IiatFDh0Y_u7jJLc3N0eH/view?usp=drive_link", 
+      "name": "attestation-de-propriété-D2098.png"
+    });
+    
+    const transactionJson: NFTokenMint = {
+      "TransactionType": "NFTokenMint",
+      "Account": standby_wallet.classicAddress,
+      "URI": convertStringToHex(data),
+      "Flags": 8,
+      "TransferFee": 25000,
+      "NFTokenTaxon": 0, //Required, but if you have no use for it, set to zero.
+      "Memos": [
+        {
+            "Memo": {
+                "MemoType": convertStringToHex("Metadata"),
+                "MemoData": convertStringToHex(JSON.stringify({"name": "attestation-de-propriété-D2098.png"})),
+            }
+        }
+    ]
+    };
+    */
 
 mintToken();
