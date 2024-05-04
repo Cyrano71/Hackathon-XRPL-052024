@@ -1,0 +1,26 @@
+{
+  "name": "xrpl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "account_nfts": "hardhat run --network evmSidechain scripts/account_nfts.ts",
+    "mint_nfts":  "hardhat run --network evmSidechain scripts/mint_nfts.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@peersyst/xrp-evm-contracts": "^2.1.1",
+    "xrpl": "^3.0.0"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts": "^5.0.2",
+    "dotenv": "^16.4.5",
+    "hardhat": "^2.22.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5",
+    "xchain-sdk": "^1.2.5"
+  }
+}
