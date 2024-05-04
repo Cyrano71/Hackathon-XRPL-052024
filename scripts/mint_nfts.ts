@@ -11,6 +11,9 @@ https://maps.app.goo.gl/rcPVzxCS5JQShxkT6
 
 https://maps.app.goo.gl/T6KKfWjnsyaGA9Jn7
 81 Rue de Grenelle, 75007 Paris
+
+https://maps.app.goo.gl/h9YMENoFYBkT2WQa7
+19 Rue Tournefort T, 75005 Paris
 */
 
 const mintToken = async () => {
@@ -19,16 +22,16 @@ const mintToken = async () => {
     await client.connect()
     results += '\nConnected. Minting NFT.'
 
-    const URI = "https://maps.app.goo.gl/T6KKfWjnsyaGA9Jn7"
+    const URI = "https://maps.app.goo.gl/h9YMENoFYBkT2WQa7"
     const memoData = {
-      name: "81 Rue de Grenelle, 75007 Paris",
-      collectionName: "75007",
+      name: "19 Rue Tournefort T, 75005 Paris",
+      collectionName: "75005",
       floor: 2,
       appartmentId : 3,
       txIds: [
-        "6881BB021632F37416B582E4B282AD51E3371C7F3C0C05241FA211AE2EC231FF",
-        "EE43EFD562CD53366921163124B5B215308302D82F545B51331161614A311B85",
-        "670A6F88B46804AC9C6ADEB92DD9DD631359A0BD99DCE4538A6B746629007581",
+        "C80956B4B2979BCC40B7A84C3D514AA22208135D8C83D8BD8FA04073B5C5DECA",
+        "CD10929F0AF32EA2EC6145A3AC8406382C3265A12A76D7A30EE0AD81D685F8FE",
+        "E711D69017C472367030124C90685BB90C303332072505D11EC88DD80CD9AFB0",
   ]}
 
   const transactionJson: NFTokenMint = {

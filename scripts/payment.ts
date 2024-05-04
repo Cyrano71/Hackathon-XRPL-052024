@@ -18,9 +18,9 @@ const payment = async () => {
 
     const issuer_wallet = Wallet.fromSeed(issuerSeed);
     const receiver_wallet = Wallet.fromSeed(receiverSeed);
-    const hashes = [ "cf71ebf9953dfa1295e03834a66750393c09cfa84bc3f30f7320ba75d63c9ce7",
-    "d0cabf2cc18f9b7a1e323825b720e20f440b530ca5ae232366d407e89ecd2e03",
-    "dba3c97a50671f1ab5464d7c54d66faff01457894a8e85a3ac62fad12d71c29c"];
+    const hashes = [ "357067877955dd0537dd42daafd458cbd0c4d04ed0c225cad460126b1b2a34cf",
+    "32c7b422acebb4987f5719ba5883fc98d31235e912db4f7510c0dc82dea7d182",
+    "d2e5c4ca428abcf82f6c8a2bf69bcd1de2f8e856475486d8d492da17f01776ff",];
     
     for (let i = 0; i < hashes.length; i++) {
         const hash = hashes[i];
