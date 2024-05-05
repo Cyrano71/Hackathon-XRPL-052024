@@ -1,6 +1,9 @@
 //src/components/NFTCard.js
-import React from 'react';
+import React, { useState } from 'react';
 import { convertHexToString }  from "xrpl" 
+import image01 from'../images/01.PNG';
+import image02 from'../images/02.PNG';
+import image03 from'../images/03.png';
 
 //component that takes an nft object and maps it to corresponding elements
 const NFTCard = ({nft}) => {
@@ -10,9 +13,15 @@ const NFTCard = ({nft}) => {
     console.log("uri",uri)
     const data = JSON.parse(convertHexToString(txn.Memos[0].Memo.MemoData))
     console.log(data)
+    let source = image03
+    if (data.collectionName === "75006") {
+        source = image01;
+    } else if (data.collectionName === "75007") {
+        source = image02;
+    } 
     return (
         <div className='max-w-196 rounded overflow-hidden shadow-lg'>
-             <img src={uri} alt="" className='w-full' />
+             <img src={source} alt="" className='w-full object-contain h-48 w-96'/>
             <div className='px-4 py-4'>
                  <a href={uri}>
                 <div className='font-bold text-teal-600 text-xl mb-2'>{data.name}</div>
@@ -22,11 +31,13 @@ const NFTCard = ({nft}) => {
                 </ul>
             </div>
             <div className='px-6 py-4'>
-               
+            <h1 class="mb-4 text-lg font-extrabold text-gray-900 dark:text-white md:text-lg lg:text-lg">
+            <h1 class="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">Transactions Ids</h1>
+                </h1>
                 {data.txIds?.map((txId, index) => (
                     <a href={"https://testnet.xrpl.org/transactions/" + txId}>
                         <span key={index} className="inline-block bg-gray-200
-                        rounded-full px-3 py-2 text-sm font-semibold text-gray-700 mr-2">{txId}
+                        rounded-full px-3 py-2 text-sm font-semibold text-gray-700 mr-2">{txId.substring(0, 20) + "....."}
                         </span>
                 </a>
                 ))}
