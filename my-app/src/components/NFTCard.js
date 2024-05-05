@@ -9,6 +9,8 @@ import image03 from'../images/03.png';
 const NFTCard = ({nft}) => {
     console.log(nft)
     const txn = nft.transactions[0].tx;
+    const hash = txn.hash;
+    const explorer = "https://testnet.xrpl.org/transactions/" + hash
     const uri = convertHexToString(txn.URI)
     console.log("uri",uri)
     const data = JSON.parse(convertHexToString(txn.Memos[0].Memo.MemoData))
@@ -21,13 +23,19 @@ const NFTCard = ({nft}) => {
     } 
     return (
         <div className='max-w-196 rounded overflow-hidden shadow-lg'>
+
+
+<h1 class="flex items-center text-lg font-extrabold dark:text-white text-center my-5 mx-20">NFT_ID   <span class="bg-blue-100 text-blue-800 text-lg font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-2"> <a href={explorer}>
+{nft.nft_id.substring(0, 20) + "....."}
+         </a> </span></h1>
+
              <img src={source} alt="" className='w-full object-contain h-48 w-96'/>
             <div className='px-4 py-4'>
                  <a href={uri}>
                 <div className='font-bold text-teal-600 text-xl mb-2'>{data.name}</div>
                 </a>  
                 <ul>
-                    <li>Collection Name: <strong>{data.collectionName}</strong></li>
+                   
                 </ul>
             </div>
             <div className='px-6 py-4'>
