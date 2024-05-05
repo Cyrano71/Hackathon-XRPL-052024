@@ -27,10 +27,9 @@ function App() {
       await clioClient.connect()
       await sClient.connect()
 
-      const standby_wallet = Wallet.fromSeed(address);
       const request_account= {
         command: "account_nfts",
-        account: standby_wallet.classicAddress
+        account: address
       };
 
       const nfts = await sClient.request(request_account)

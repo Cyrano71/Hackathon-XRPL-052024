@@ -10,7 +10,7 @@ https://xrpl.org/docs/references/http-websocket-apis/public-api-methods/account-
 
 https://xrpl.org/docs/references/protocol/transactions/types/nftokenmint/
 
-### Commands
+### NFTS
 
 1. Get the content bill doc hash 
 
@@ -70,3 +70,14 @@ Transaction result: {
 ```console
 npm run get_memo
 ```
+
+### REACT APP
+
+```console
+cd my-app
+npm start
+```
+
+You enter your classic address to collect your nfts
+
+![alt text](./assets/app.PNG)

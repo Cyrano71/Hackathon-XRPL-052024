@@ -8,6 +8,7 @@ const issuerSeed = process.env.XRP_TEST_WALLET_SEED as string;
 const getNFT = async () => {
     let results = "";
     const standby_wallet = Wallet.fromSeed(issuerSeed);
+    console.log(standby_wallet)
     await client.connect()
     results += '\nConnected. Getting NFTs...'
     const request: Request = {
