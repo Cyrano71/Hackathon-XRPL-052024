@@ -25,8 +25,8 @@ const NFTCard = ({nft}) => {
         <div className='max-w-196 rounded overflow-hidden shadow-lg'>
 
 
-<h1 class="flex items-center text-lg font-extrabold dark:text-white text-center my-5 mx-20">NFT_ID   <span class="bg-blue-100 text-blue-800 text-lg font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-2"> <a href={explorer}>
-{nft.nft_id.substring(0, 20) + "....."}
+<h1 class="flex items-center text-lg font-extrabold dark:text-white text-center my-5 mx-20"><span class="bg-blue-100 text-blue-800 text-lg font-semibold me-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-2"> <a href={explorer}>
+{ "NFT_ID    " + nft.nft_id.substring(0, 20) + "....."}
          </a> </span></h1>
 
              <img src={source} alt="" className='w-full object-contain h-48 w-96'/>
