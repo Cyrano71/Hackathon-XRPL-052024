@@ -31,7 +31,9 @@ npm run payment
 
 3. Mint the NFT
 
-- include in the memo data the list of txns
+We use the memos as a storage for the metadata
+
+- include in the memo field the list of txns
 - run the command 
 ```console
 npm run mint_nfts
@@ -66,6 +68,12 @@ Transaction result: {
   validated: true
 }
 ```
+
+https://testnet.xrpl.org/transactions/EB66195DCA41E3F998B2903EB4E68CB3D2269C70A105374B6DF439053332B0E8/detailed
+
+![alt text](./assets/memos.PNG)
+
+![alt text](./assets/memos2.PNG)
 
 4. Get the NFT memo data with the NFT token id
 
