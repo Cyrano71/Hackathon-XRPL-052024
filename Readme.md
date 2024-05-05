@@ -90,4 +90,4 @@ npm start
 
 You enter your classic address to collect your nfts
 
-![alt text](./assets/app2.PNG)
+![alt text](./assets/app3.PNG)
